@@ -32,11 +32,16 @@ def main():
 
     counter = 0
     season = seasons.get_season4()
-    output = simulation.simulate(season)
+    limit = 10000000
+    output = simulation.simulate(season, limit)
 
     columns = 2
     rows = len(season.weeks) // columns + 1
-    fig = make_subplots(rows=rows, cols=columns)
+    fig = make_subplots(
+        rows=rows, 
+        cols=columns,
+        subplot_titles=[f'Week {w.id}' for w in season.weeks]
+    )
 
     for week, outcome in output.weeks.items():
         heatmap = heatmap_for_week(season, outcome)

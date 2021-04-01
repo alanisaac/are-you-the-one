@@ -36,15 +36,14 @@ def feasible_season(season: Season, pairings_set: Set[Pairing]) -> Iterable[Tupl
 def all_combinations(list1: List[_T], list2: List[_U]) -> Iterable[Iterable[Tuple[_T, _U]]]:
     return (zip(x, list2) for x in itertools.permutations(list1, len(list2)))
 
-def simulate(season: Season) -> Simulation:
+def simulate(season: Season, limit: int = None) -> Simulation:
     week_outcomes = {week: Outcome(0, collections.defaultdict(int)) for week in season.weeks}
 
     combinations = all_combinations(season.teams["men"], season.teams["women"])
-    limit = 10000000
     counter = 0
     for combination in combinations:
         counter += 1
-        if counter > limit:
+        if limit and counter > limit:
             break
         pairings = (Pairing(x, y) for x, y in combination)
         pairing_set = set(pairings)

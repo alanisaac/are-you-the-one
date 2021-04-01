@@ -256,7 +256,7 @@ def get_season4() -> Season:
     julia = Contestant("Julia")
     emma = Contestant("Emma")
     nicole = Contestant("Nicole")
-    kaylen = Contestant("Kayleen")
+    kaylen = Contestant("Kaylen")
     francesca = Contestant("Francesca")
 
     women = [
@@ -277,6 +277,7 @@ def get_season4() -> Season:
         "men": men,
         "women": women
     }
+
     week1 = Week(
         1,
         beams=3,
@@ -296,9 +297,30 @@ def get_season4() -> Season:
             Pairing(prosper, tori): False
         }
     )
+    
+    week2 = Week(
+        2,
+        beams=3,
+        pairings=[
+            Pairing(giovanni, kaylen),
+            Pairing(cam, julia),
+            Pairing(asaf, camille),
+            Pairing(john, nicole),
+            Pairing(prosper, emma),
+            Pairing(sam, francesca),
+            Pairing(cameron, mikala),
+            Pairing(morgan, alyssa),
+            Pairing(stephen, tori),
+            Pairing(tyler, victoria)
+        ],
+        truth_booths={
+            Pairing(john, julia): False
+        }
+    )
 
     weeks = [
         week1,
+        week2
     ]
 
     season = Season(
