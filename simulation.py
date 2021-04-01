@@ -40,7 +40,7 @@ def simulate(season: Season) -> Simulation:
     week_outcomes = {week: Outcome(0, collections.defaultdict(int)) for week in season.weeks}
 
     combinations = all_combinations(season.teams["men"], season.teams["women"])
-    limit = 1000000
+    limit = 10000000
     counter = 0
     for combination in combinations:
         counter += 1

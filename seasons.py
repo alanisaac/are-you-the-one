@@ -215,10 +215,96 @@ def get_season1() -> Season:
         week7
     ]
 
-    season1 = Season(
+    season = Season(
         contestants,
         teams,
         weeks
     )
 
-    return season1
+    return season
+
+def get_season4() -> Season:
+    stephen = Contestant("Stephen")
+    prosper = Contestant("Prosper")
+    tyler = Contestant("Tyler")
+    cameron = Contestant("Cameron")
+    morgan = Contestant("Morgan")
+    asaf = Contestant("Asaf")
+    john = Contestant("John")
+    sam = Contestant("Sam")
+    cam = Contestant("Cam")
+    giovanni = Contestant("Giovanni")
+
+    men = [
+        stephen,
+        prosper,
+        tyler,
+        cameron,
+        morgan,
+        asaf,
+        john,
+        sam,
+        cam,
+        giovanni
+    ]
+
+    victoria = Contestant("Victoria")
+    alyssa = Contestant("Alyssa")
+    camille = Contestant("Camille")
+    mikala = Contestant("Mikala")
+    tori = Contestant("Tori")
+    julia = Contestant("Julia")
+    emma = Contestant("Emma")
+    nicole = Contestant("Nicole")
+    kaylen = Contestant("Kayleen")
+    francesca = Contestant("Francesca")
+
+    women = [
+        victoria,
+        alyssa,
+        camille,
+        mikala,
+        tori,
+        julia,
+        emma,
+        nicole,
+        kaylen,
+        francesca
+    ]
+
+    contestants = [*women, *men]
+    teams = {
+        "men": men,
+        "women": women
+    }
+    week1 = Week(
+        1,
+        beams=3,
+        pairings=[
+            Pairing(giovanni, kaylen),
+            Pairing(cam, victoria),
+            Pairing(asaf, francesca),
+            Pairing(john, emma),
+            Pairing(prosper, camille),
+            Pairing(sam, alyssa),
+            Pairing(cameron, mikala),
+            Pairing(morgan, julia),
+            Pairing(stephen, nicole),
+            Pairing(tyler, tori)
+        ],
+        truth_booths={
+            Pairing(prosper, tori): False
+        }
+    )
+
+    weeks = [
+        week1,
+    ]
+
+    season = Season(
+        contestants,
+        teams,
+        weeks
+    )
+
+    return season

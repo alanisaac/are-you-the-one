@@ -31,7 +31,7 @@ def heatmap_for_week(season, outcome):
 def main():
 
     counter = 0
-    season = seasons.get_season1()
+    season = seasons.get_season4()
     output = simulation.simulate(season)
 
     columns = 2
