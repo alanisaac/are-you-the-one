@@ -29,9 +29,12 @@ def convert_season(data: SeasonData) -> Season:
     week_number = 0
     for week_data in data.weeks:
         pairings = set()
+        
+        # each contestant may only be in one pairing
+        contestants_copy = dict(contestants)
         for pairing_data in week_data.pairings:
-            first = contestants[pairing_data[0]]
-            second = contestants[pairing_data[1]]
+            first = contestants_copy.pop(pairing_data[0])
+            second = contestants_copy.pop(pairing_data[1])
             pairings.add((first, second))
 
         booths = dict()
