@@ -10,12 +10,7 @@ def feasible_week(week: Week, pairings_set: Set[Tuple[int, int]]) -> bool:
     for pairing, outcome in week.booths.items():
         is_in_parings = pairing in pairings_set
 
-        # negative truth booth but in pairings
-        if is_in_parings and not outcome:
-            return False
-
-        # positive truth booth but not in pairings
-        if outcome and not is_in_parings:
+        if outcome != is_in_parings:
             return False
 
     matched_count = 0
