@@ -51,7 +51,8 @@ def main():
         col = counter % columns + 1
         fig.add_trace(heatmap, row=row, col=col)
         counter += 1
-
+        
+    fig.update_yaxes(autorange="reversed")
     fig.show()
 
 if __name__ == "__main__":
