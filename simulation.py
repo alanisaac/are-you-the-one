@@ -1,13 +1,13 @@
 import collections
 import itertools
-from models import Contestant, Outcome, Pairing, Season, Simulation, Week
+from models import Outcome, Season, Simulation, Week
 from typing import Dict, Iterable, List, Set, Tuple, TypeVar
 
 _T = TypeVar("_T")
 _U = TypeVar("_U")
 
-def feasible_week(week: Week, pairings_set: Set[Pairing]) -> bool:
-    for pairing, outcome in week.truth_booths.items():
+def feasible_week(week: Week, pairings_set: Set[Tuple[int, int]]) -> bool:
+    for pairing, outcome in week.booths.items():
         is_in_parings = pairing in pairings_set
 
         # negative truth booth but in pairings
@@ -25,7 +25,7 @@ def feasible_week(week: Week, pairings_set: Set[Pairing]) -> bool:
 
     return matched_count == week.beams
 
-def feasible_season(season: Season, pairings_set: Set[Pairing]) -> Iterable[Tuple[Week, bool]]:
+def feasible_season(season: Season, pairings_set: Set[Tuple[int, int]]) -> Iterable[Tuple[Week, bool]]:
     is_feasible = True
 
     for week in season.weeks:
@@ -39,14 +39,13 @@ def all_combinations(list1: List[_T], list2: List[_U]) -> Iterable[Iterable[Tupl
 def simulate(season: Season, limit: int = None) -> Simulation:
     week_outcomes = {week: Outcome(0, collections.defaultdict(int)) for week in season.weeks}
 
-    combinations = all_combinations(season.teams["men"], season.teams["women"])
+    combinations = all_combinations(season.teams[0], season.teams[1])
     counter = 0
     for combination in combinations:
         counter += 1
         if limit and counter > limit:
             break
-        pairings = (Pairing(x, y) for x, y in combination)
-        pairing_set = set(pairings)
+        pairing_set = set(combination)
     
         for week, is_feasible in feasible_season(season, pairing_set):
             week_outcome = week_outcomes[week]

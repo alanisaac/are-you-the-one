@@ -1,37 +1,42 @@
 from collections import defaultdict
 from dataclasses import dataclass, field
-from typing import Dict, List, Tuple
+from pydantic import BaseModel
+from typing import Dict, List, Mapping, Sequence, Tuple
 
-@dataclass(frozen=True)
-class Contestant:
-    name: str
+class BoothData(BaseModel):
+    pairing: Tuple[str, str]
+    outcome: bool
 
-@dataclass(frozen=True)
-class Pairing:
-    first: Contestant
-    second: Contestant
+class WeekData(BaseModel):
+    beams: int
+    pairings: List[Tuple[str, str]]
+    booths: List[BoothData]
+
+class SeasonData(BaseModel):
+    teams: List[List[str]]
+    weeks: List[WeekData]
 
 @dataclass(frozen=True, eq=True)
 class Week:
     id: int
     beams: int = field(compare=False)
-    pairings: List[Pairing] = field(compare=False)
-    truth_booths: Dict[Pairing, bool] = field(compare=False)
+    pairings: Sequence[Tuple[int, int]] = field(compare=False)
+    booths: Mapping[Tuple[int, int], bool] = field(compare=False)
 
 @dataclass(frozen=True)
 class Season:
-    contestants: List[Contestant]
-    teams: Dict[str, List[Contestant]]
+    contestants: List[str]
+    teams: List[Sequence[int]]
     weeks: List[Week]
 
 @dataclass()
 class Outcome:
     total_counts: int
-    counts: Dict[Pairing, float]
+    counts: Dict[Tuple[int, int], int]
 
     @property
-    def probabilities(self) -> Dict[Pairing, float]:
-        result = defaultdict(int)
+    def probabilities(self) -> Dict[Tuple[int, int], float]:
+        result = defaultdict(float)
         result.update({k: v / self.total_counts for k, v in self.counts.items()})
         return result
 

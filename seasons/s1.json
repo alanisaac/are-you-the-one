@@ -1,0 +1,181 @@
+{
+    "teams": [
+        [
+            "Adam",
+            "Chris S",
+            "Chris T",
+            "Dillan",
+            "Dre",
+            "Ethan",
+            "JJ",
+            "Joey",
+            "Ryan",
+            "Wes"
+        ],
+        [
+            "Amber",
+            "Ashleigh",
+            "Brittany",
+            "Coleysia",
+            "Jacy",
+            "Jessica",
+            "Kayla",
+            "Paige",
+            "Shanley",
+            "Simone"
+        ]
+    ],
+    "weeks": [
+        {
+            "beams": 2,
+            "pairings": [
+                ["Wes", "Kayla"],
+                ["Ethan", "Shanley"],
+                ["Adam", "Brittany"],
+                ["Dre", "Jacy"],
+                ["JJ", "Simone"],
+                ["Chris T", "Jessica"],
+                ["Joey", "Paige"],
+                ["Chris S", "Ashleigh"],
+                ["Ryan", "Amber"],
+                ["Dillan", "Coleysia"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Chris T", "Shanley"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Wes", "Coleysia"],
+                ["Ethan", "Amber"],
+                ["Adam", "Shanley"],
+                ["Dre", "Ashleigh"],
+                ["JJ", "Jacy"],
+                ["Chris T", "Paige"],
+                ["Joey", "Brittany"],
+                ["Chris S", "Simone"],
+                ["Ryan", "Kayla"],
+                ["Dillan", "Jessica"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Ethan", "Jessica"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 2,
+            "pairings": [
+                ["Dillan", "Coleysia"],
+                ["JJ", "Jessica"],
+                ["Chris T", "Simone"],
+                ["Chris S", "Paige"],
+                ["Wes", "Jacy"],
+                ["Ethan", "Amber"],
+                ["Joey", "Shanley"],
+                ["Ryan", "Kayla"],
+                ["Dre", "Ashleigh"],
+                ["Adam", "Brittany"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["JJ", "Simone"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 2,
+            "pairings": [
+                ["Dillan", "Coleysia"],
+                ["JJ", "Shanley"],
+                ["Chris T", "Ashleigh"],
+                ["Chris S", "Paige"],
+                ["Wes", "Jessica"],
+                ["Ethan", "Kayla"],
+                ["Joey", "Jacy"],
+                ["Ryan", "Brittany"],
+                ["Dre", "Simone"],
+                ["Adam", "Amber"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Dillan", "Jessica"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 5,
+            "pairings": [
+                ["Dillan", "Coleysia"],
+                ["JJ", "Jacy"],
+                ["Chris T", "Paige"],
+                ["Chris S", "Simone"],
+                ["Wes", "Kayla"],
+                ["Ethan", "Amber"],
+                ["Joey", "Jessica"],
+                ["Ryan", "Ashleigh"],
+                ["Dre", "Brittany"],
+                ["Adam", "Shanley"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Dre", "Ashleigh"],
+                    "outcome": false
+                },
+                {
+                    "pairing": ["Dillan", "Coleysia"],
+                    "outcome": true
+                }
+            ]
+        },
+        {
+            "beams": 5,
+            "pairings": [
+                ["Dillan", "Coleysia"],
+                ["JJ", "Jacy"],
+                ["Chris T", "Paige"],
+                ["Chris S", "Brittany"],
+                ["Wes", "Kayla"],
+                ["Ethan", "Amber"],
+                ["Joey", "Simone"],
+                ["Ryan", "Jessica"],
+                ["Dre", "Shanley"],
+                ["Adam", "Ashleigh"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Chris T", "Paige"],
+                    "outcome": true
+                }
+            ]
+        },
+        {
+            "beams": 7,
+            "pairings": [
+                ["Dillan", "Coleysia"],
+                ["JJ", "Brittany"],
+                ["Chris T", "Paige"],
+                ["Chris S", "Jacy"],
+                ["Wes", "Kayla"],
+                ["Ethan", "Amber"],
+                ["Joey", "Jessica"],
+                ["Ryan", "Ashleigh"],
+                ["Dre", "Simone"],
+                ["Adam", "Shanley"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Ryan", "Kayla"],
+                    "outcome": false
+                }
+            ]
+        }
+    ]
+}

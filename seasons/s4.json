@@ -1,0 +1,72 @@
+{
+    "teams": [
+        [
+            "Stephen",
+            "Prosper",
+            "Tyler",
+            "Cameron",
+            "Morgan",
+            "Asaf",
+            "John",
+            "Sam",
+            "Cam",
+            "Giovanni"
+        ],
+        [
+            "Victoria",
+            "Alyssa",
+            "Camille",
+            "Mikala",
+            "Tori",
+            "Julia",
+            "Emma",
+            "Nicole",
+            "Kaylen",
+            "Francesca"
+        ]
+    ],
+    "weeks": [
+        {
+            "beams": 3,
+            "pairings": [
+                ["Giovanni", "Kaylen"],
+                ["Cam", "Victoria"],
+                ["Asaf", "Francesca"],
+                ["John", "Emma"],
+                ["Prosper", "Camille"],
+                ["Sam", "Alyssa"],
+                ["Cameron", "Mikala"],
+                ["Morgan", "Julia"],
+                ["Stephen", "Nicole"],
+                ["Tyler", "Tori"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Prosper", "Tori"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 3,
+            "pairings": [
+                ["Giovanni", "Kaylen"],
+                ["Cam", "Julia"],
+                ["Asaf", "Camille"],
+                ["John", "Nicole"],
+                ["Prosper", "Emma"],
+                ["Sam", "Francesca"],
+                ["Cameron", "Mikala"],
+                ["Morgan", "Alyssa"],
+                ["Stephen", "Tori"],
+                ["Tyler", "Victoria"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["John", "Julia"],
+                    "outcome": false
+                }
+            ]
+        }
+    ]
+}
