@@ -16,13 +16,15 @@ def convert_season(data: SeasonData) -> Season:
     contestants = dict()
     teams = []
     
-    contestant_number = 0
+    next_contestant_number = 0
     for team_data in data.teams:
         team = []
         for contestant in sorted(team_data):
-            contestants[contestant] = contestant_number
+            contestant_number = contestants.setdefault(contestant, next_contestant_number)
+            if contestant_number == next_contestant_number:
+                next_contestant_number += 1
+
             team.append(contestant_number)
-            contestant_number += 1
         teams.append(team)
 
     weeks = []

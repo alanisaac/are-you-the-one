@@ -31,10 +31,22 @@ def feasible_season(season: Season, pairings_set: Set[Tuple[int, int]]) -> Itera
 def all_combinations(list1: List[_T], list2: List[_U]) -> Iterable[Iterable[Tuple[_T, _U]]]:
     return (zip(x, list2) for x in itertools.permutations(list1, len(list2)))
 
+def all_combinations_single(list_: List[_T]) -> Iterable[Iterable[Tuple[_T, _T]]]:
+    if not list_:
+        yield []
+    else:
+        for group in (((list_[0],) + xs) for xs in itertools.combinations(list_[1:], 1)):
+            for groups in all_combinations_single([x for x in list_ if x not in group]):
+                yield [group] + groups
+
 def simulate(season: Season, limit: int = None) -> Simulation:
     week_outcomes = [Outcome(0, collections.defaultdict(int)) for week in season.weeks]
 
-    combinations = all_combinations(season.teams[0], season.teams[1])
+    if season.teams[0] == season.teams[1]:
+        combinations = all_combinations_single(season.teams[0])
+    else:
+        combinations = all_combinations(season.teams[0], season.teams[1])
+
     counter = 0
     for combination in combinations:
         counter += 1
