@@ -29,9 +29,8 @@ def heatmap_for_week(season, outcome):
     return heatmap
 
 def main():
-
     counter = 0
-    season = seasons.get_season4()
+    season = seasons.get_season1()
     limit = 10000000
     output = simulation.simulate(season, limit)
 
@@ -40,14 +39,16 @@ def main():
     fig = make_subplots(
         rows=rows, 
         cols=columns,
-        subplot_titles=[f'Week {w.id}' for w in season.weeks]
+        subplot_titles=[
+            f'Week {week.id}: {outcome.total_counts:,} possibilities' 
+            for week, outcome in output.weeks.items()
+        ]
     )
 
     for week, outcome in output.weeks.items():
         heatmap = heatmap_for_week(season, outcome)
         row = counter // columns + 1
         col = counter % columns + 1
-        print(row, col)
         fig.add_trace(heatmap, row=row, col=col)
         counter += 1
 
