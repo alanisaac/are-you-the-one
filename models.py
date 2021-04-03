@@ -17,11 +17,14 @@ class SeasonData(BaseModel):
     weeks: List[WeekData]
 
 @dataclass(frozen=True)
+class Guess:
+    pairings: Set[Tuple[int, int]]
+    correct: int
+
+@dataclass(frozen=True)
 class Week:
     id: int
-    beams: int
-    pairings: Set[Tuple[int, int]]
-    booths: Mapping[Tuple[int, int], bool]
+    guesses: List[Guess]
 
     @property
     def name(self) -> str:

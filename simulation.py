@@ -7,18 +7,15 @@ _T = TypeVar("_T")
 _U = TypeVar("_U")
 
 def feasible_week(week: Week, pairings_set: Set[Tuple[int, int]]) -> bool:
-    for pairing, outcome in week.booths.items():
-        is_in_parings = pairing in pairings_set
-
-        if outcome != is_in_parings:
+    for guess in week.guesses:
+        correct = 0
+        for pairing in guess.pairings:
+            if pairing in pairings_set:
+                correct += 1
+        if correct != guess.correct:
             return False
-
-    matched_count = 0
-    for pairing in week.pairings:
-        if pairing in pairings_set:
-            matched_count += 1
-
-    return matched_count == week.beams
+            
+    return True
 
 def feasible_season(season: Season, pairings_set: Set[Tuple[int, int]]) -> Iterable[Tuple[Week, bool]]:
     is_feasible = True
