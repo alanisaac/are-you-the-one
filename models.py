@@ -1,7 +1,7 @@
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pydantic import BaseModel
-from typing import Dict, List, Mapping, Sequence, Tuple
+from typing import Dict, List, Mapping, Sequence, Set, Tuple
 
 class BoothData(BaseModel):
     pairing: Tuple[str, str]
@@ -20,7 +20,7 @@ class SeasonData(BaseModel):
 class Week:
     id: int
     beams: int
-    pairings: Sequence[Tuple[int, int]]
+    pairings: Set[Tuple[int, int]]
     booths: Mapping[Tuple[int, int], bool]
 
     @property
