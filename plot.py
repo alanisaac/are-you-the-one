@@ -1,4 +1,4 @@
-from models import Season, Outcome
+from models import Outcome, Season, Simulation
 import math
 import seasons
 import simulation
@@ -28,20 +28,20 @@ def heatmap_for_week(season: Season, outcome: Outcome) -> go.Heatmap:
 
     return heatmap
 
-def create_plot(season: Season, output: simulation) -> go.Figure:
+def create_plot(season: Season, output: Simulation) -> go.Figure:
     rows = math.ceil(math.sqrt(len(season.weeks)))
     columns = len(season.weeks) // rows + 1
     fig = make_subplots(
         rows=rows, 
         cols=columns,
         subplot_titles=[
-            f'Week {week.id}: {outcome.total_counts:,} possibilities' 
-            for week, outcome in output.weeks.items()
+            f'{week.name}: {output.weeks[week.id].total_counts:,} possibilities' 
+            for week in season.weeks
         ]
     )
 
     counter = 0
-    for week, outcome in output.weeks.items():
+    for outcome in output.weeks:
         heatmap = heatmap_for_week(season, outcome)
         row = counter // columns + 1
         col = counter % columns + 1

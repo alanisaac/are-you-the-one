@@ -4,14 +4,6 @@ from models import Season, SeasonData, Week
 from pathlib import Path
 from typing import Iterable
 
-def replay_season(season: Season) -> Iterable[Season]:
-    current_weeks = []
-
-    for week in season.weeks:
-        current_weeks.append(week)
-        copy_weeks = current_weeks.copy()
-        yield replace(season, weeks=copy_weeks)
-
 def read_season(name: str) -> SeasonData:
     path = Path('seasons') / f'{name}.json'
     with path.open('r') as f:
@@ -34,7 +26,7 @@ def convert_season(data: SeasonData) -> Season:
         teams.append(team)
 
     weeks = []
-    week_number = 1
+    week_number = 0
     for week_data in data.weeks:
         pairings = set()
         for pairing_data in week_data.pairings:
@@ -49,7 +41,7 @@ def convert_season(data: SeasonData) -> Season:
             booths[(first, second)] = booth_data.outcome
         
         week = Week(
-            week_number,
+            id = week_number,
             beams = week_data.beams,
             pairings = pairings,
             booths = booths

@@ -16,12 +16,16 @@ class SeasonData(BaseModel):
     teams: List[List[str]]
     weeks: List[WeekData]
 
-@dataclass(frozen=True, eq=True)
+@dataclass(frozen=True)
 class Week:
     id: int
-    beams: int = field(compare=False)
-    pairings: Sequence[Tuple[int, int]] = field(compare=False)
-    booths: Mapping[Tuple[int, int], bool] = field(compare=False)
+    beams: int
+    pairings: Sequence[Tuple[int, int]]
+    booths: Mapping[Tuple[int, int], bool]
+
+    @property
+    def name(self) -> str:
+        return f'Week {self.id + 1}'
 
 @dataclass(frozen=True)
 class Season:
@@ -43,4 +47,4 @@ class Outcome:
 @dataclass()
 class Simulation:
     season: Season
-    weeks: Dict[Week, Outcome]
+    weeks: List[Outcome]

@@ -37,7 +37,7 @@ def all_combinations(list1: List[_T], list2: List[_U]) -> Iterable[Iterable[Tupl
     return (zip(x, list2) for x in itertools.permutations(list1, len(list2)))
 
 def simulate(season: Season, limit: int = None) -> Simulation:
-    week_outcomes = {week: Outcome(0, collections.defaultdict(int)) for week in season.weeks}
+    week_outcomes = [Outcome(0, collections.defaultdict(int)) for week in season.weeks]
 
     combinations = all_combinations(season.teams[0], season.teams[1])
     counter = 0
@@ -48,7 +48,7 @@ def simulate(season: Season, limit: int = None) -> Simulation:
         pairing_set = set(combination)
     
         for week, is_feasible in feasible_season(season, pairing_set):
-            week_outcome = week_outcomes[week]
+            week_outcome = week_outcomes[week.id]
             if is_feasible:
                 week_outcome.total_counts += 1
                 for pairing in pairing_set:
