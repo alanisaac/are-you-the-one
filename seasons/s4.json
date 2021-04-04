@@ -67,6 +67,69 @@
                     "outcome": false
                 }
             ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Giovanni", "Kaylen"],
+                ["Tyler", "Julia"],
+                ["Asaf", "Camille"],
+                ["Cam", "Nicole"],
+                ["Prosper", "Emma"],
+                ["Sam", "Alyssa"],
+                ["Cameron", "Mikala"],
+                ["Morgan", "Francesca"],
+                ["Stephen", "Tori"],
+                ["John", "Victoria"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Cameron", "Mikala"],
+                    "outcome": true
+                }
+            ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Giovanni", "Kaylen"],
+                ["Tyler", "Francesca"],
+                ["Asaf", "Camille"],
+                ["Cam", "Emma"],
+                ["Prosper", "Nicole"],
+                ["Sam", "Alyssa"],
+                ["Cameron", "Mikala"],
+                ["Morgan", "Tori"],
+                ["Stephen", "Julia"],
+                ["John", "Victoria"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Asaf", "Tori"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Tyler", "Kaylen"],
+                ["Giovanni", "Francesca"],
+                ["Asaf", "Camille"],
+                ["Cam", "Emma"],
+                ["Stephen", "Nicole"],
+                ["Sam", "Alyssa"],
+                ["Cameron", "Mikala"],
+                ["John", "Tori"],
+                ["Morgan", "Julia"],
+                ["Prosper", "Victoria"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Giovanni", "Kaylen"],
+                    "outcome": false
+                }
+            ]
         }
     ]
 }
