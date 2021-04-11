@@ -93,6 +93,50 @@
                     "outcome": false
                 }
             ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Tyler", "Shannon"],
+                ["Edward", "Alicia"],
+                ["Mike", "Kam"],
+                ["Jaylan", "Tyranny"],
+                ["Joey", "Katheryn"],
+                ["Osvaldo", "Taylor"],
+                ["Ozzy", "Hannah"],
+                ["Andre", "Casandra"],
+                ["Derrick", "Gianna"],
+                ["Hayden", "Carolina"],
+                ["Michael", "Kari"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Osvaldo", "Tyranny"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Tyler", "Shannon"],
+                ["Edward", "Kam"],
+                ["Mike", "Alicia"],
+                ["Jaylan", "Casandra"],
+                ["Joey", "Katheryn"],
+                ["Osvaldo", "Gianna"],
+                ["Ozzy", "Hannah"],
+                ["Andre", "Taylor"],
+                ["Derrick", "Tyranny"],
+                ["Hayden", "Carolina"],
+                ["Michael", "Kari"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Edward", "Kam"],
+                    "outcome": true
+                }
+            ]
         }
     ]
 }
