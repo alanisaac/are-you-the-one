@@ -1,21 +1,25 @@
 import collections
+from dataclasses import dataclass
 import itertools
-from models import Outcome, Season, Simulation, Week
+from models import Season, Simulation, Week, WeekOutcome
 from typing import Dict, Iterable, List, Set, Tuple, TypeVar
 
 _T = TypeVar("_T")
 _U = TypeVar("_U")
 
 def feasible_week(week: Week, pairings_set: Set[Tuple[int, int]]) -> bool:
-    for guess in week.guesses:
-        correct = 0
-        for pairing in guess.pairings:
-            if pairing in pairings_set:
-                correct += 1
-        if correct != guess.correct:
+    for booth in week.booths:
+        is_in_parings = booth.pairing in pairings_set
+
+        if booth.outcome != is_in_parings:
             return False
-            
-    return True
+
+    correct = 0
+    for pairing in week.pairings:
+        if pairing in pairings_set:
+            correct += 1
+
+    return correct == week.beams
 
 def feasible_season(season: Season, pairings_set: Set[Tuple[int, int]]) -> Iterable[Tuple[Week, bool]]:
     is_feasible = True
@@ -36,8 +40,8 @@ def all_combinations_single(list_: List[_T]) -> Iterable[Iterable[Tuple[_T, _T]]
             for groups in all_combinations_single([x for x in list_ if x not in group]):
                 yield [group] + groups
 
-def simulate(season: Season, limit: int = None) -> Simulation:
-    week_outcomes = [Outcome(0, collections.defaultdict(int)) for week in season.weeks]
+def simulate(season: Season) -> Simulation:
+    week_outcomes = [WeekOutcome(0, collections.defaultdict(int)) for week in season.weeks]
 
     if season.teams[0] == season.teams[1]:
         combinations = all_combinations_single(season.teams[0])
@@ -47,8 +51,6 @@ def simulate(season: Season, limit: int = None) -> Simulation:
     counter = 0
     for combination in combinations:
         counter += 1
-        if limit and counter > limit:
-            break
         pairing_set = set(combination)
     
         for week, is_feasible in feasible_season(season, pairing_set):

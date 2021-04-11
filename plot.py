@@ -1,11 +1,11 @@
-from models import Outcome, Season, Simulation
+from models import Season, Simulation, WeekOutcome
 import math
 import seasons
 import simulation
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 
-def heatmap_for_week(season: Season, outcome: Outcome) -> go.Heatmap:
+def heatmap_for_week(season: Season, outcome: WeekOutcome) -> go.Heatmap:
     rows = season.teams[0]
     columns = season.teams[1]
     probabilities = outcome.probabilities

@@ -1,7 +1,7 @@
 from collections import defaultdict
 from dataclasses import dataclass, field
 from pydantic import BaseModel
-from typing import Dict, List, Mapping, Sequence, Set, Tuple
+from typing import Dict, Iterable, List, Mapping, Sequence, Set, Tuple
 
 class BoothData(BaseModel):
     pairing: Tuple[str, str]
@@ -22,13 +22,27 @@ class Guess:
     correct: int
 
 @dataclass(frozen=True)
+class TruthBooth:
+    pairing: Tuple[int, int]
+    outcome: bool
+
+@dataclass(frozen=True)
 class Week:
     id: int
-    guesses: List[Guess]
+    booths: List[TruthBooth]
+    pairings: Set[Tuple[int, int]]
+    beams: int
 
     @property
     def name(self) -> str:
         return f'Week {self.id + 1}'
+
+    @property
+    def guesses(self) -> Iterable[Guess]:
+        for booth in self.booths:
+            yield Guess(set((booth.pairing)), 1 if booth.outcome else 0)
+
+        yield Guess(self.pairings, self.beams)
 
 @dataclass(frozen=True)
 class Season:
@@ -37,7 +51,7 @@ class Season:
     weeks: List[Week]
 
 @dataclass()
-class Outcome:
+class WeekOutcome:
     total_counts: int
     counts: Dict[Tuple[int, int], int]
 
@@ -50,4 +64,4 @@ class Outcome:
 @dataclass()
 class Simulation:
     season: Season
-    weeks: List[Outcome]
+    weeks: List[WeekOutcome]

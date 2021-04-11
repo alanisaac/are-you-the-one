@@ -1,6 +1,6 @@
 from dataclasses import replace
 import json
-from models import Guess, Season, SeasonData, Week 
+from models import Guess, Season, SeasonData, TruthBooth, Week
 from pathlib import Path
 from typing import Iterable
 
@@ -30,15 +30,15 @@ def convert_season(data: SeasonData) -> Season:
     weeks = []
     week_number = 0
     for week_data in data.weeks:
-        guesses = []
+        booths = []
         for booth_data in week_data.booths:
             first = contestants[booth_data.pairing[0]]
             second = contestants[booth_data.pairing[1]]
-            guess = Guess(
-                set([(first, second)]),
-                int(booth_data.outcome)
+            booth = TruthBooth(
+                pairing=(first, second),
+                outcome=booth_data.outcome
             )
-            guesses.append(guess)
+            booths.append(booth)
 
         pairings = set()
         # each contestant may only be in one pairing
@@ -47,16 +47,12 @@ def convert_season(data: SeasonData) -> Season:
             first = contestants_copy.pop(pairing_data[0])
             second = contestants_copy.pop(pairing_data[1])
             pairings.add((first, second))
-
-        guess = Guess(
-            pairings,
-            week_data.beams
-        )
-        guesses.append(guess)
         
         week = Week(
             id = week_number,
-            guesses = guesses
+            pairings = pairings,
+            beams = week_data.beams,
+            booths = booths
         )
 
         weeks.append(week)

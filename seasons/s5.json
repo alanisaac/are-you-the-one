@@ -1,0 +1,98 @@
+{
+    "teams": [
+        [
+            "Tyler",
+            "Edward",
+            "Mike",
+            "Jaylan",
+            "Joey",
+            "Osvaldo",
+            "Ozzy",
+            "Andre",
+            "Derrick",
+            "Hayden",
+            "Michael"
+        ],
+        [
+            "Taylor",
+            "Kam",
+            "Kari",
+            "Casandra",
+            "Carolina",
+            "Tyranny",
+            "Gianna",
+            "Alicia",
+            "Katheryn",
+            "Shannon",
+            "Hannah"
+        ]
+    ],
+    "weeks": [
+        {
+            "beams": 2,
+            "pairings": [
+                ["Tyler", "Taylor"],
+                ["Edward", "Kam"],
+                ["Mike", "Kari"],
+                ["Jaylan", "Casandra"],
+                ["Joey", "Carolina"],
+                ["Osvaldo", "Tyranny"],
+                ["Ozzy", "Gianna"],
+                ["Andre", "Alicia"],
+                ["Derrick", "Katheryn"],
+                ["Hayden", "Shannon"],
+                ["Michael", "Hannah"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Hayden", "Gianna"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 0,
+            "pairings": [
+                ["Tyler", "Tyranny"],
+                ["Edward", "Shannon"],
+                ["Mike", "Casandra"],
+                ["Jaylan", "Kam"],
+                ["Joey", "Carolina"],
+                ["Osvaldo", "Kari"],
+                ["Ozzy", "Katheryn"],
+                ["Andre", "Hannah"],
+                ["Derrick", "Alicia"],
+                ["Hayden", "Taylor"],
+                ["Michael", "Gianna"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Andre", "Alicia"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 4,
+            "pairings": [
+                ["Tyler", "Shannon"],
+                ["Edward", "Kam"],
+                ["Mike", "Alicia"],
+                ["Jaylan", "Casandra"],
+                ["Joey", "Katheryn"],
+                ["Osvaldo", "Tyranny"],
+                ["Ozzy", "Gianna"],
+                ["Andre", "Kari"],
+                ["Derrick", "Hannah"],
+                ["Hayden", "Carolina"],
+                ["Michael", "Taylor"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Ozzy", "Carolina"],
+                    "outcome": false
+                }
+            ]
+        }
+    ]
+}
