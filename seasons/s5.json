@@ -203,6 +203,24 @@
                     "outcome": true
                 }
             ]
+        },
+        {
+            "beams": 9,
+            "pairings": [
+                ["Tyler", "Shannon"],
+                ["Edward", "Kam"],
+                ["Mike", "Alicia"],
+                ["Jaylan", "Tyranny"],
+                ["Joey", "Hannah"],
+                ["Osvaldo", "Taylor"],
+                ["Ozzy", "Gianna"],
+                ["Andre", "Katheryn"],
+                ["Derrick", "Casandra"],
+                ["Hayden", "Carolina"],
+                ["Michael", "Kari"]
+            ],
+            "booths": [
+            ]
         }
     ]
 }
