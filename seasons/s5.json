@@ -183,13 +183,24 @@
             ]
         },
         {
-            "beams": 0,
+            "beams": 5,
             "pairings": [
+                ["Tyler", "Hannah"],
+                ["Edward", "Kam"],
+                ["Mike", "Kari"],
+                ["Jaylan", "Tyranny"],
+                ["Joey", "Casandra"],
+                ["Osvaldo", "Taylor"],
+                ["Ozzy", "Alicia"],
+                ["Andre", "Gianna"],
+                ["Derrick", "Shannon"],
+                ["Hayden", "Carolina"],
+                ["Michael", "Katheryn"]
             ],
             "booths": [
                 {
                     "pairing": ["Hayden", "Carolina"],
-                    "outcome": false
+                    "outcome": true
                 }
             ]
         }
