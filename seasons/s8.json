@@ -38,5 +38,43 @@
         ]
     ],
     "weeks": [
+        {
+            "beams": 2,
+            "pairings": [
+                ["Nour", "Amber"],
+                ["Kari", "Kylie"],
+                ["Max", "Justin"],
+                ["Basit", "Jonathan"],
+                ["Aasha", "Paige"],
+                ["Brandon", "Remy"],
+                ["Jasmine", "Jenna"],
+                ["Danny", "Kai"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Justin", "Nour"],
+                    "outcome": false
+                }
+            ]
+        },
+        {
+            "beams": 2,
+            "pairings": [
+                ["Kai", "Jenna"],
+                ["Kari", "Kylie"],
+                ["Jasmine", "Justin"],
+                ["Basit", "Jonathan"],
+                ["Amber", "Nour"],
+                ["Brandon", "Aasha"],
+                ["Remy", "Danny"],
+                ["Max", "Paige"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Brandon", "Remy"],
+                    "outcome": false
+                }
+            ]
+        }
     ]
 }
