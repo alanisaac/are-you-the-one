@@ -75,6 +75,25 @@
                     "outcome": false
                 }
             ]
+        },
+        {
+            "beams": 2,
+            "pairings": [
+                ["Jonathan", "Brandon"],
+                ["Aasha", "Max"],
+                ["Paige", "Amber"],
+                ["Kai", "Danny"],
+                ["Remy", "Basit"],
+                ["Kylie", "Kari"],
+                ["Jasmine", "Nour"],
+                ["Jenna", "Justin"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Jenna", "Kai"],
+                    "outcome": false
+                }
+            ]
         }
     ]
 }

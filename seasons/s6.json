@@ -1,0 +1,54 @@
+{
+    "teams": [
+        [
+            "Kareem",
+            "Malcolm",
+            "Ethan",
+            "Clinton",
+            "Shad",
+            "Joe",
+            "Michael",
+            "Keith",
+            "Tyler",
+            "Dimitri",
+            "Anthony"
+        ],
+        [
+            "Nicole",
+            "Uche",
+            "Audrey",
+            "Keyana",
+            "Jada",
+            "Nurys",
+            "Zoe",
+            "Geles",
+            "Diandra",
+            "Alexis",
+            "Alivia"
+        ]
+    ],
+    "weeks": [
+        {
+            "beams": 3,
+            "pairings": [
+                ["Kareem", "Alivia"],
+                ["Anthony", "Geles"],
+                ["Malcolm", "Nurys"],
+                ["Keith", "Alexis"],
+                ["Joe", "Zoe"],
+                ["Michael", "Keyana"],
+                ["Ethan", "Jada"],
+                ["Clinton", "Uche"],
+                ["Shad", "Audrey"],
+                ["Tyler", "Nicole"],
+                ["Dimitri", "Diandra"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Ethan", "Keyana"],
+                    "outcome": false
+                }
+            ]
+        }
+    ]
+}
