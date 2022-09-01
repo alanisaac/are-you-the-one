@@ -71,6 +71,28 @@
                     "outcome": false
                 }
             ]
+        },
+        {
+            "beams": 2,
+            "pairings": [
+                ["Malcolm", "Geles"],
+                ["Michael", "Audrey"],
+                ["Joe", "Zoe"],
+                ["Kareem", "Alivia"],
+                ["Shad", "Keyana"],
+                ["Tyler", "Nicole"],
+                ["Ethan", "Alexis"],
+                ["Clinton", "Uche"],
+                ["Anthony", "Jada"],
+                ["Kieth", "Diandra"],
+                ["Dimitri", "Nurys"]
+            ],
+            "booths": [
+                {
+                    "pairing": ["Malcolm", "Nurys"],
+                    "outcome": false
+                }
+            ]
         }
     ]
 }
