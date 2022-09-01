@@ -1,5 +1,4 @@
 import argparse
-import math
 import seasons
 import simulation
 import plot

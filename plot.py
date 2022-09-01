@@ -1,7 +1,5 @@
 from models import Season, Simulation, WeekOutcome
 import math
-import seasons
-import simulation
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 

@@ -1,8 +1,7 @@
 import collections
-from dataclasses import dataclass
 import itertools
 from models import Season, Simulation, Week, WeekOutcome
-from typing import Dict, Iterable, List, Set, Tuple, TypeVar
+from typing import Iterable, List, Set, Tuple, TypeVar
 
 _T = TypeVar("_T")
 _U = TypeVar("_U")

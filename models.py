@@ -1,7 +1,7 @@
 from collections import defaultdict
-from dataclasses import dataclass, field
+from dataclasses import dataclass
 from pydantic import BaseModel
-from typing import Dict, Iterable, List, Mapping, Sequence, Set, Tuple
+from typing import Dict, Iterable, List, Sequence, Set, Tuple
 
 class BoothData(BaseModel):
     pairing: Tuple[str, str]

@@ -1,8 +1,6 @@
-from dataclasses import replace
 import json
-from models import Guess, Season, SeasonData, TruthBooth, Week
+from models import Season, SeasonData, TruthBooth, Week
 from pathlib import Path
-from typing import Iterable
 
 def read_season(name: str) -> SeasonData:
     path = Path('seasons') / f'{name}.json'
